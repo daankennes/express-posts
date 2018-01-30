@@ -7,14 +7,12 @@
 </head>
 <body>
   <h2>All Comments</h2>
-  <ul class='post'>
-      <% console.log(comments.length) %>
+  <ul>
       <% for(var i=0; i < comments.length; i++) {%>
-  
-        <li class='post'>
-          <span><%= comments[i].name %></span>
-          <span><%= comments[i].email %></span>
-          <span><%= comments[i].body %></span><br /><br />
+        <li>
+          <span>Name: <strong><%= comments[i].name %></strong></span><br />
+          <span>Email: <%= comments[i].email %></span><br />
+          <span>Body: <%= comments[i].body %></span><br /><br />
         </li>
       <% } %>
   </ul>

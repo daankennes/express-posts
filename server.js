@@ -20,9 +20,7 @@ app.get('/', (req, res) => {
 // List all posts
 app.get('/posts', (req, res) => {
   request('http://jsonplaceholder.typicode.com/posts', function(err, reqres, body) {
-    
     let json = JSON.parse(body);
-    console.log(json[0]);
     res.render('posts.ejs', {posts: json});
   });
 });
@@ -47,7 +45,6 @@ app.post('/search', (req, res) => {
       for (let x = 0; x < newjson.length; x++){
         if (newjson[x].postId == postId) response.push(newjson[x]);
       }
-      console.log(response);
       res.render('search_result.ejs', {comments: response});
     });
   });
